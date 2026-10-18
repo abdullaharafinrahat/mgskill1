@@ -1,0 +1,492 @@
+{
+  "meta": {
+    "title": "Component sampler - every asset in the kit",
+    "language": "en",
+    "audio": null,
+    "music": null
+  },
+  "acts": [
+    {
+      "id": "hook",
+      "name": "Hook",
+      "goal": "Land the promise in three seconds"
+    },
+    {
+      "id": "problem",
+      "name": "Problem",
+      "goal": "Name the cost of getting it wrong"
+    },
+    {
+      "id": "proof",
+      "name": "Proof",
+      "goal": "Earn trust with evidence"
+    },
+    {
+      "id": "offer",
+      "name": "Offer",
+      "goal": "Make the ask"
+    }
+  ],
+  "assets_needed": [],
+  "shots": [
+    {
+      "id": "s01",
+      "act": "hook",
+      "visual": "graphics",
+      "punch": true,
+      "purpose": "Open on the promise so the viewer knows what they get.",
+      "duration": 2.8,
+      "voice": "Learn motion graphics the way professionals actually learn it.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "bokeh",
+          "base": "#070E1E",
+          "colors": [
+            "NAVY",
+            "ELECTRIC",
+            "SKY"
+          ],
+          "count": 80,
+          "vignette": true
+        },
+        {
+          "type": "text",
+          "text": "LEARN THE CRAFT",
+          "lines": [
+            "LEARN THE CRAFT",
+            "NOT THE BUTTONS."
+          ],
+          "x": 0.5,
+          "y": 0.44,
+          "anchor": "mm",
+          "size": 0.078,
+          "weight": "black",
+          "color": "#EEF2F4",
+          "line_spacing": 1.2,
+          "letter_spacing": 2.0,
+          "in": {
+            "type": "wipe_bars",
+            "dur": 0.5,
+            "ease": "ease_out"
+          }
+        },
+        {
+          "type": "pill",
+          "text": "MOTION GRAPHICS",
+          "gradient": "azure_blue",
+          "x": 0.5,
+          "y": 0.76,
+          "w": 0.3,
+          "h": 0.075,
+          "bullet": true,
+          "glow": 1.0,
+          "in": {
+            "type": "pop",
+            "dur": 0.4,
+            "delay": 0.45,
+            "ease": "back"
+          }
+        },
+        {
+          "type": "sparkles",
+          "x": 0.5,
+          "y": 0.44,
+          "w": 0.9,
+          "h": 0.5,
+          "count": 9,
+          "seed": 4,
+          "in": {
+            "type": "fade",
+            "dur": 0.6,
+            "delay": 0.3
+          }
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "act": "problem",
+      "visual": "talking-head",
+      "rest": true,
+      "purpose": "Put a face to the problem so the advice lands on a person.",
+      "duration": 3.2,
+      "voice": "Most people learn the software. Very few learn the craft.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "radial",
+          "inner": "#072B6D",
+          "outer": "#070E1E",
+          "vignette": true
+        },
+        {
+          "type": "video",
+          "src": "assets/samples/talking_head.mp4",
+          "src_in": 0.0,
+          "src_dur": 3.0,
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1.0,
+          "h": 1.0,
+          "fit": "cover"
+        },
+        {
+          "type": "bubble",
+          "text": "Software is not craft.",
+          "tail": "down",
+          "fill": "#EEF2F4",
+          "text_color": "#070E1E",
+          "x": 0.5,
+          "y": 0.17,
+          "w": 0.44,
+          "h": 0.17,
+          "glow": 0.4,
+          "in": {
+            "type": "pop",
+            "dur": 0.4,
+            "delay": 0.5,
+            "ease": "back"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "act": "problem",
+      "visual": "graphics",
+      "purpose": "Show the wrong path with a red pill so the mistake is legible.",
+      "duration": 2.6,
+      "voice": "Learning shortcuts is what keeps people stuck.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "gradient",
+          "stops": [
+            "#3A1018",
+            "#070E1E"
+          ],
+          "vignette": true
+        },
+        {
+          "type": "pill",
+          "text": "A HUNDRED TUTORIALS",
+          "gradient": "azure_black",
+          "x": 0.5,
+          "y": 0.4,
+          "w": 0.4,
+          "h": 0.09,
+          "bullet": false,
+          "in": {
+            "type": "slide",
+            "from": [
+              -0.2,
+              0
+            ],
+            "dur": 0.35
+          }
+        },
+        {
+          "type": "pill",
+          "text": "STILL NO JOB",
+          "gradient": "green_black",
+          "x": 0.5,
+          "y": 0.58,
+          "w": 0.34,
+          "h": 0.09,
+          "bullet": false,
+          "in": {
+            "type": "slide",
+            "from": [
+              0.2,
+              0
+            ],
+            "dur": 0.35,
+            "delay": 0.15
+          }
+        },
+        {
+          "type": "text",
+          "text": "TOOLS FIRST. SKILL NEVER.",
+          "x": 0.5,
+          "y": 0.8,
+          "anchor": "mm",
+          "size": 0.04,
+          "weight": "bold",
+          "color": "#918377",
+          "letter_spacing": 3.0,
+          "in": {
+            "type": "fade",
+            "dur": 0.5,
+            "delay": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "act": "proof",
+      "visual": "graphics",
+      "punch": true,
+      "purpose": "Deliver the hard number as a hero moment.",
+      "duration": 3.0,
+      "voice": "Fifteen hundred students. Four countries. One method.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "bokeh",
+          "base": "#070E1E",
+          "colors": [
+            "NAVY",
+            "GREEN",
+            "SKY"
+          ],
+          "count": 70,
+          "vignette": true
+        },
+        {
+          "type": "numeral",
+          "text": "1500+",
+          "gradient": "green_lime",
+          "x": 0.5,
+          "y": 0.46,
+          "w": 0.62,
+          "h": 0.4,
+          "rays": true,
+          "in": {
+            "type": "pop",
+            "dur": 0.55,
+            "ease": "elastic"
+          }
+        },
+        {
+          "type": "pill",
+          "text": "STUDENTS TRAINED",
+          "gradient": "green_black",
+          "x": 0.5,
+          "y": 0.76,
+          "w": 0.34,
+          "h": 0.07,
+          "bullet": false,
+          "in": {
+            "type": "slide",
+            "from": [
+              0,
+              0.12
+            ],
+            "dur": 0.4,
+            "delay": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "act": "proof",
+      "visual": "b-roll",
+      "purpose": "Show the system as a progression, not a list.",
+      "duration": 3.4,
+      "voice": "Start with the idea. Build the system. Make it look expensive.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "circuit",
+          "base": "#072B6D",
+          "vignette": true
+        },
+        {
+          "type": "icon",
+          "glyph": "Ae",
+          "x": 0.24,
+          "y": 0.4,
+          "w": 0.16,
+          "h": 0.26,
+          "in": {
+            "type": "pop",
+            "dur": 0.35,
+            "ease": "back"
+          }
+        },
+        {
+          "type": "icon",
+          "glyph": "Pr",
+          "x": 0.5,
+          "y": 0.4,
+          "w": 0.16,
+          "h": 0.26,
+          "in": {
+            "type": "pop",
+            "dur": 0.35,
+            "delay": 0.12,
+            "ease": "back"
+          }
+        },
+        {
+          "type": "icon",
+          "glyph": "Bl",
+          "x": 0.76,
+          "y": 0.4,
+          "w": 0.16,
+          "h": 0.26,
+          "in": {
+            "type": "pop",
+            "dur": 0.35,
+            "delay": 0.24,
+            "ease": "back"
+          }
+        },
+        {
+          "type": "text",
+          "text": "IDEA  >  SYSTEM  >  CRAFT",
+          "x": 0.5,
+          "y": 0.66,
+          "anchor": "mm",
+          "size": 0.04,
+          "weight": "bold",
+          "color": "#EEF2F4",
+          "letter_spacing": 3.0,
+          "in": {
+            "type": "fade",
+            "dur": 0.5,
+            "delay": 0.4
+          }
+        },
+        {
+          "type": "graph",
+          "x": 0.5,
+          "y": 0.82,
+          "w": 0.42,
+          "h": 0.16,
+          "values": [
+            0.05,
+            0.12,
+            0.1,
+            0.28,
+            0.42,
+            0.55,
+            0.72,
+            1.0
+          ],
+          "color": "#1FBF5A",
+          "in": {
+            "type": "wipe_iris",
+            "dur": 0.6,
+            "delay": 0.35
+          }
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "act": "offer",
+      "visual": "graphics",
+      "cta": true,
+      "purpose": "Make the offer concrete and ask for the action out loud.",
+      "duration": 3.8,
+      "voice": "Twenty two classes, twenty four hours of support, a mentor on your side. Enrol today.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "bokeh",
+          "base": "#070E1E",
+          "colors": [
+            "NAVY",
+            "ELECTRIC",
+            "SKY"
+          ],
+          "count": 90,
+          "vignette": true
+        },
+        {
+          "type": "text",
+          "text": "22 CLASSES",
+          "x": 0.28,
+          "y": 0.4,
+          "anchor": "mm",
+          "size": 0.09,
+          "weight": "black",
+          "color": "#EEF2F4",
+          "letter_spacing": 1.5,
+          "in": {
+            "type": "slide",
+            "from": [
+              -0.15,
+              0
+            ],
+            "dur": 0.4
+          },
+          "max_width": 0.33
+        },
+        {
+          "type": "text",
+          "text": "24H SUPPORT",
+          "x": 0.72,
+          "y": 0.4,
+          "anchor": "mm",
+          "size": 0.09,
+          "weight": "black",
+          "color": "#C6F23C",
+          "letter_spacing": 1.5,
+          "in": {
+            "type": "slide",
+            "from": [
+              0.15,
+              0
+            ],
+            "dur": 0.4,
+            "delay": 0.12
+          },
+          "max_width": 0.33
+        },
+        {
+          "type": "label",
+          "text": "DEDICATED MENTOR",
+          "gradient": "blue_lime",
+          "x": 0.5,
+          "y": 0.57,
+          "w": 0.3,
+          "h": 0.065,
+          "pointer": "none",
+          "in": {
+            "type": "fade",
+            "dur": 0.4,
+            "delay": 0.3
+          }
+        },
+        {
+          "type": "pill",
+          "text": "ENROL NOW",
+          "gradient": "azure_cyan",
+          "x": 0.5,
+          "y": 0.74,
+          "w": 0.3,
+          "h": 0.095,
+          "bullet": false,
+          "glow": 1.2,
+          "in": {
+            "type": "pop",
+            "dur": 0.4,
+            "delay": 0.55,
+            "ease": "back"
+          }
+        },
+        {
+          "type": "cursor",
+          "x": 0.7,
+          "y": 0.8,
+          "w": 0.06,
+          "h": 0.1,
+          "in": {
+            "type": "whip",
+            "from": [
+              -0.6,
+              -0.2
+            ],
+            "dur": 0.45,
+            "delay": 0.9
+          }
+        }
+      ]
+    }
+  ]
+}

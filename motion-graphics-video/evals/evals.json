@@ -1,0 +1,85 @@
+{
+  "skill_name": "motion-graphics-video",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here is a raw clip of me talking about my video-editing course. I want it turned into a proper promo video - the kind with animated text and graphics, like a professional ad. Can you do that?",
+      "expected_output": "The agent inspects the video with analyze_input.py, extracts or asks for a script, writes a storyboard with a 4-act structure and a stated purpose per shot, resolves the assets (generating them or writing ASSETS_REQUEST.md), validates, and renders an H.264 mp4 with graphics over the talking-head footage.",
+      "files": [],
+      "expectations": [
+        "The agent ran scripts/analyze_input.py on the raw clip before writing any script or storyboard",
+        "The storyboard declares at least 3 acts and every shot has a non-empty 'purpose'",
+        "The first shot's duration is 3 seconds or less",
+        "At least one shot in the closing stretch is marked \"cta\": true",
+        "The agent either generated the missing images or wrote ASSETS_REQUEST.md with a complete generation prompt and asked the user to supply them",
+        "The agent ran scripts/validate_storyboard.py and the build passed validation",
+        "The delivered file is an mp4 with a video stream and, when a narration track was supplied, an audio stream"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Write this as a 60 second video for my SaaS. Script: Most teams waste a week on onboarding. Ours takes ten minutes. Two thousand teams already switched. Try it free, no card needed. Make it look premium.",
+      "expected_output": "The agent writes a script/beat breakdown, produces a 4-act storyboard (hook, problem, credibility, offer) with a CTA for 'try it free, no card needed', and renders it with the cinematic dark palette, a hero numeral for 2000, and a CTA pill.",
+      "files": [],
+      "expectations": [
+        "A storyboard was produced and saved as JSON before rendering",
+        "The storyboard has at least 3 acts including a hook act and an offer act",
+        "A shot carries the hero number 2000 using the numeral component",
+        "The CTA appears in the final 18 percent of the runtime and says try it free or equivalent",
+        "The speech rate falls between 1.7 and 3.3 words per second",
+        "The output video is 1080p (or the requested size) H.264 in an mp4 container"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I recorded a voiceover in Bengali (attached) about my new course. Make a promo video with Bengali text on screen and the same dark blue style as professional Bengali ads.",
+      "expected_output": "The agent sets meta.language to bn, the renderer selects the Noto Sans Bengali face, the text is shaped correctly (no tofu boxes, correct conjuncts), and the video is delivered with the voice track muxed and trimmed to the storyboard runtime.",
+      "files": [],
+      "expectations": [
+        "meta.language is set to a Bengali code such as bn",
+        "The Bengali font was fetched with scripts/fetch_fonts.py --all-scripts",
+        "Bengali text renders as shaped glyphs rather than empty boxes",
+        "The delivered video contains an audio stream with the narration",
+        "The output duration matches the storyboard runtime, not the length of the raw recording"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Can you add motion graphics to my existing mp4? Just some animated titles over the top and maybe some lower thirds. Nothing too fancy.",
+      "expected_output": "The agent uses the raw video as the backbone, keeps the original audio, and adds graphic layers (title, pill, lower-third label) that follow the speech, rather than rebuilding the piece from scratch.",
+      "files": [],
+      "expectations": [
+        "At least one video layer references the user's source file with a src_in offset",
+        "The original audio is preserved in the output",
+        "Graphic layers use the component kit (pill, label, card, bubble, text) rather than raw image pasting",
+        "The storyboard still declares acts and per-shot purposes - a graphics overlay is not an excuse to skip the narrative check"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Here is my 40 second voice note with the script for my course ad. I have no images and no music - just do it.",
+      "expected_output": "The agent renders the video from the script, creates what images it can, writes ASSETS_REQUEST.md for the rest, asks the user for the files and for a music bed, and delivers a working cut with placeholders while making the gap explicit.",
+      "files": [],
+      "expectations": [
+        "ASSETS_REQUEST.md was written with a save path, a size and a complete generation prompt for every missing asset",
+        "The agent asked the user to supply the missing assets rather than pretending placeholders were final",
+        "Placeholder images were generated so the render was not blocked",
+        "The agent stated in the delivery that some assets are placeholders",
+        "The agent asked about or noted the absence of a music bed"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Make a 15 second vertical reel for my app. Vertical 1080x1920. Hook hard, show the product, tell people to download it.",
+      "expected_output": "The agent notes that 15 seconds cannot carry four acts, proposes a three-act cut (hook, proof, offer) with the user's agreement, and renders a 1080x1920 H.264 mp4 with a vertical-safe layout.",
+      "files": [],
+      "expectations": [
+        "The agent flagged the runtime/act-count tension rather than silently cramming four acts into 15 seconds",
+        "The render used --width 1080 --height 1920",
+        "The first shot still lands within 3 seconds",
+        "A CTA is present in the final stretch",
+        "The layout does not rely on elements placed at the extreme left/right edges where a vertical crop would lose them"
+      ]
+    }
+  ]
+}

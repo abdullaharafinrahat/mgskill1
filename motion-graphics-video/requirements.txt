@@ -1,0 +1,14 @@
+# Runtime dependencies for the motion-graphics renderer.
+#
+# Pillow must be built with Raqm for complex-script shaping (Bengali,
+# Arabic, Devanagari). Check with:
+#     python -c "from PIL import features; print(features.check('raqm'))"
+# If that prints False, install Pillow from a wheel that bundles libraqm,
+# or install libraqm and rebuild.
+Pillow>=10.0
+numpy>=1.24
+
+# Optional but recommended:
+#   imageio-ffmpeg   a static ffmpeg binary, if ffmpeg is not on PATH
+#   faster-whisper   speech-to-text for raw footage (base model or better)
+imageio-ffmpeg>=0.4.9

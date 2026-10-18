@@ -1,0 +1,393 @@
+{
+  "_comment": "TEMPLATE. Copy this, fill it in, then run: python scripts/validate_storyboard.py my_storyboard.json && python scripts/build_video.py my_storyboard.json -o out.mp4  Every shot needs a 'purpose' - that field is what the validator checks to prove the video argues something instead of just moving.  Layer types: bg, text, image, video, pill, bubble, card, avatar, label, cursor, monitor, numeral, sparkles, graph, icon, phone, circuit.",
+  "meta": {
+    "title": "Your video title",
+    "language": "en",
+    "audio": null,
+    "music": null,
+    "source_video": null,
+    "_note": "Set 'audio' to a narration track (wav/mp3) and 'music' to a music bed, or pass --audio/--music on the command line. 'language' picks the typeface: en, bn, hi, ar, zh."
+  },
+  "acts": [
+    {
+      "id": "hook",
+      "name": "Hook",
+      "goal": "Stop the scroll in 3 seconds",
+      "target_start": 0.0,
+      "target_end": 6.0
+    },
+    {
+      "id": "problem",
+      "name": "Problem",
+      "goal": "Name the pain in the viewer's own words",
+      "target_start": 6.0,
+      "target_end": 22.0
+    },
+    {
+      "id": "proof",
+      "name": "Credibility",
+      "goal": "Earn the right to be believed",
+      "target_start": 22.0,
+      "target_end": 45.0
+    },
+    {
+      "id": "offer",
+      "name": "Offer",
+      "goal": "Give the offer and ask for the action",
+      "target_start": 45.0,
+      "target_end": 60.0
+    }
+  ],
+  "assets_needed": [
+    {
+      "id": "hero_product",
+      "kind": "image",
+      "path": "assets/hero_product.png",
+      "width": 1600,
+      "height": 900,
+      "subject": "a floating 3D product render of the app icon, dark navy studio",
+      "use": "the hero reveal in the offer act",
+      "leave_clear": "keep the lower third empty for a label",
+      "prompt": "Subject: a floating 3D product render of the app icon, dark navy studio. Format: 1600x900 (16:9). Style: cinematic 3D render, deep navy and electric azure palette, soft rim light, shallow depth of field, no text, no logos, no people's faces unless specified. Purpose in the edit: the hero reveal in the offer act. Composition constraint: keep the lower third empty for a label. No text, no watermark, no borders."
+    }
+  ],
+  "theme": {
+    "ELECTRIC": "#0C4DC6",
+    "GRADIENTS": {
+      "azure_ramp": [
+        "#001F5F",
+        "#003FBF"
+      ]
+    }
+  },
+  "shots": [
+    {
+      "id": "s01",
+      "act": "hook",
+      "visual": "graphics",
+      "purpose": "Open on a hard claim about the viewer's problem so they stay.",
+      "duration": 2.6,
+      "punch": true,
+      "voice": "Most people edit. Very few get hired.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "bokeh",
+          "base": "#070E1E",
+          "colors": [
+            "NAVY",
+            "ELECTRIC",
+            "SKY"
+          ],
+          "count": 90,
+          "vignette": true
+        },
+        {
+          "type": "text",
+          "text": "MOST PEOPLE EDIT.",
+          "lines": [
+            "MOST PEOPLE EDIT.",
+            "VERY FEW GET HIRED."
+          ],
+          "x": 0.5,
+          "y": 0.46,
+          "anchor": "mm",
+          "size": 0.072,
+          "weight": "black",
+          "color": "#EEF2F4",
+          "line_spacing": 1.18,
+          "letter_spacing": 2.0,
+          "in": {
+            "type": "wipe_bars",
+            "dur": 0.45,
+            "ease": "ease_out"
+          }
+        },
+        {
+          "type": "pill",
+          "text": "THE GAP",
+          "gradient": "azure_blue",
+          "x": 0.5,
+          "y": 0.76,
+          "w": 0.26,
+          "h": 0.075,
+          "bullet": true,
+          "glow": 1.0,
+          "in": {
+            "type": "pop",
+            "dur": 0.35,
+            "delay": 0.5,
+            "ease": "back"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "act": "hook",
+      "visual": "b-roll",
+      "purpose": "Show the gap as a picture - busy vs still - before explaining it.",
+      "duration": 2.8,
+      "voice": "Here is the difference.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "gradient",
+          "stops": [
+            "#072B6D",
+            "#070E1E"
+          ],
+          "vignette": true
+        },
+        {
+          "type": "card",
+          "x": 0.3,
+          "y": 0.46,
+          "w": 0.38,
+          "h": 0.56,
+          "fill": "#072B6D",
+          "alpha": 240,
+          "brackets": true,
+          "border": true,
+          "src": "assets/before.png",
+          "in": {
+            "type": "slide",
+            "from": [
+              -0.18,
+              0
+            ],
+            "dur": 0.4,
+            "ease": "ease_out"
+          }
+        },
+        {
+          "type": "card",
+          "x": 0.7,
+          "y": 0.46,
+          "w": 0.38,
+          "h": 0.56,
+          "fill": "#0C4DC6",
+          "alpha": 240,
+          "brackets": true,
+          "border": true,
+          "src": "assets/after.png",
+          "in": {
+            "type": "slide",
+            "from": [
+              0.18,
+              0
+            ],
+            "dur": 0.4,
+            "delay": 0.12,
+            "ease": "ease_out"
+          }
+        },
+        {
+          "type": "label",
+          "text": "BEFORE",
+          "gradient": "azure_black",
+          "x": 0.3,
+          "y": 0.8,
+          "w": 0.16,
+          "h": 0.055,
+          "pointer": "none",
+          "in": {
+            "type": "fade",
+            "dur": 0.3,
+            "delay": 0.3
+          }
+        },
+        {
+          "type": "label",
+          "text": "AFTER",
+          "gradient": "green_lime",
+          "x": 0.7,
+          "y": 0.8,
+          "w": 0.16,
+          "h": 0.055,
+          "pointer": "none",
+          "in": {
+            "type": "fade",
+            "dur": 0.3,
+            "delay": 0.42
+          }
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "act": "problem",
+      "visual": "talking-head",
+      "purpose": "Name the mistake the viewer is making, in their own words.",
+      "duration": 4.0,
+      "rest": true,
+      "voice": "Tools are not skill.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "radial",
+          "inner": "#072B6D",
+          "outer": "#070E1E",
+          "vignette": true
+        },
+        {
+          "type": "video",
+          "src": "assets/talking_head.mp4",
+          "src_in": 12.0,
+          "src_dur": 4.0,
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1.0,
+          "h": 1.0,
+          "fit": "cover"
+        },
+        {
+          "type": "bubble",
+          "text": "Tools are not skill.",
+          "tail": "down",
+          "fill": "#EEF2F4",
+          "text_color": "#070E1E",
+          "x": 0.5,
+          "y": 0.16,
+          "w": 0.4,
+          "h": 0.18,
+          "in": {
+            "type": "pop",
+            "dur": 0.35,
+            "delay": 0.6,
+            "ease": "back"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "act": "proof",
+      "visual": "graphics",
+      "purpose": "Land the credibility with a hard number.",
+      "duration": 3.0,
+      "punch": true,
+      "voice": "I trained over fifteen hundred people.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "bokeh",
+          "base": "#070E1E",
+          "colors": [
+            "NAVY",
+            "GREEN",
+            "SKY"
+          ],
+          "count": 70,
+          "vignette": true
+        },
+        {
+          "type": "numeral",
+          "text": "1500+",
+          "gradient": "green_lime",
+          "x": 0.5,
+          "y": 0.48,
+          "w": 0.6,
+          "h": 0.42,
+          "rays": true,
+          "in": {
+            "type": "pop",
+            "dur": 0.5,
+            "ease": "elastic"
+          }
+        },
+        {
+          "type": "pill",
+          "text": "STUDENTS TRAINED",
+          "gradient": "green_black",
+          "x": 0.5,
+          "y": 0.78,
+          "w": 0.32,
+          "h": 0.07,
+          "bullet": false,
+          "in": {
+            "type": "slide",
+            "from": [
+              0,
+              0.12
+            ],
+            "dur": 0.35,
+            "delay": 0.45
+          }
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "act": "offer",
+      "visual": "graphics",
+      "purpose": "Make the ask explicit and give the one thing to remember.",
+      "duration": 4.0,
+      "cta": true,
+      "voice": "Twenty two classes. Twenty four hours of support. A mentor on your side. Enrol today.",
+      "layers": [
+        {
+          "type": "bg",
+          "style": "circuit",
+          "base": "#072B6D",
+          "vignette": true
+        },
+        {
+          "type": "text",
+          "text": "22 CLASSES",
+          "x": 0.32,
+          "y": 0.4,
+          "anchor": "mm",
+          "size": 0.095,
+          "weight": "black",
+          "color": "#EEF2F4",
+          "letter_spacing": 1.5,
+          "in": {
+            "type": "slide",
+            "from": [
+              -0.15,
+              0
+            ],
+            "dur": 0.4
+          }
+        },
+        {
+          "type": "text",
+          "text": "24H SUPPORT",
+          "x": 0.68,
+          "y": 0.4,
+          "anchor": "mm",
+          "size": 0.095,
+          "weight": "black",
+          "color": "#C6F23C",
+          "letter_spacing": 1.5,
+          "in": {
+            "type": "slide",
+            "from": [
+              0.15,
+              0
+            ],
+            "dur": 0.4,
+            "delay": 0.12
+          }
+        },
+        {
+          "type": "pill",
+          "text": "ENROL NOW",
+          "gradient": "azure_cyan",
+          "x": 0.5,
+          "y": 0.68,
+          "w": 0.3,
+          "h": 0.095,
+          "bullet": false,
+          "in": {
+            "type": "pop",
+            "dur": 0.4,
+            "delay": 0.55,
+            "ease": "back"
+          }
+        }
+      ]
+    }
+  ]
+}
