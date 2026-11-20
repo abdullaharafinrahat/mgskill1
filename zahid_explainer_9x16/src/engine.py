@@ -228,7 +228,7 @@ def b_char(name, expr='neutral', blink=0, mouth=0, pose='down', br=0, look=0, wa
         mx, my = (sx_ + ex) / 2, (sy_ + ey) / 2; hh = math.sqrt(max(L * L - d * d / 4, 0))
         nx, ny = -(ey - sy_) / d, (ex - sx_) / d
         if ny < 0: nx, ny = -nx, -ny   # elbow bends downward
-        if side * nx < 0 and abs(nx) > .2: pass
+        if side * nx < 0 and abs(nx) > .85: nx, ny = -nx, -ny; hh *= .7   # hanging arms: elbow bends outward, not across the torso
         elx, ely = mx + nx * hh, my + ny * hh
         col = sh if c['body'] != 'uniform' else (250, 250, 250)
         p.line([(sx_, sy_), (elx, ely), (ex, ey)], 24, col, INKW)

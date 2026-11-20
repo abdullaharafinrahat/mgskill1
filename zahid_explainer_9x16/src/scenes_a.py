@@ -77,16 +77,16 @@ def s_tried(sc):
     img(sc, lambda t: ('stopw', 40, 60, 0), 600, 590, t0=ts, kind='right', z=1, s=1.0, a=.9)
     sc.add(('spot', 100, 190), 600, 590, fixed=False, z=1, s_=4.5, anim=lambda t: dict(a=ramp(t, ts + .2, ts + .7)))
     img(sc, ('cross', RED, 90), 600, 590, t0=c('মেপে'), z=1.1, s=1.2)
-    sc.cam((0, 360, 470, 1.0, 0), (ts, 360, 470, 1.12, 0), (ts + .8, 560, 560, 1.7, -2), (sc.dur, 560, 570, 2.0, 0))
+    sc.cam((0, 360, 470, 1.0, 0), (ts, 360, 470, 1.12, 0), (ts + .8, 480, 540, 1.5, -2), (sc.dur, 480, 540, 1.6, 0))
     sc.shake(c('মেপে'), .25, 8)
 def s_ad(sc):
     c = sc.cue; sc.bg((200, 160, 120), (150, 112, 86), .2); sc.add(('wall', 1000, 1300, (214, 176, 134)), 500, 470, z=.35)
     t0 = c('দ্রুত') - .3
-    img(sc, lambda t: ('poster', 'দ্রুত ও\nনির্ভরযোগ্য\nমোবাইল সার্ভিস', 50, 0, ramp(t, t0 + .3, t0 + 1.3), INK, (255, 244, 214), 0), 360, 380, t0=.1, kind='down', z=1, s=1.0, anchor=(.5, 0.0),
+    img(sc, lambda t: ('poster', 'দ্রুত ও\nনির্ভরযোগ্য\nমোবাইল সার্ভিস', 50, 0, ramp(t, t0 + .3, t0 + 1.3), INK, (255, 244, 214), 0), 360, 290, t0=.1, kind='down', z=1, s=1.0, anchor=(.5, 0.0),
         anim=lambda t: dict(rot=14 * math.exp(-t * 1.6) * math.cos(t * 6)))
-    chr_(sc, 'zahid', 190, 880, s=.85, expr='smug', pose='point', ex=[(c('দ্রুত'), 'smug')], z=1.1, talk=())
+    chr_(sc, 'zahid', 170, 930, s=.8, expr='smug', pose='point', ex=[(c('দ্রুত'), 'smug')], z=1.1, talk=())
     sc.add(('counter', 280, 160), 540, 840, z=1.05)
-    sc.cam((0, 360, 480, 1.0, 1), (c('দ্রুত'), 340, 450, 1.1, -1), (sc.dur, 360, 420, 1.35, 0))
+    sc.cam((0, 360, 480, 1.0, 1), (c('দ্রুত'), 340, 450, 1.1, -1), (sc.dur, 360, 450, 1.2, 0))
 def s_howfast(sc):
     c = sc.cue; sc.bg(NAVY, (60, 50, 120), .2); tq = c('দ্রুত', n=1)
     img(sc, ('rays', 300, 12), 360, 400, z=.3, s=2.2, a=.3, anim=lambda t: dict(rot=-t * 14))
@@ -167,8 +167,8 @@ def s_silence(sc):
     c = sc.cue; sc.bg((120, 130, 150), (84, 92, 112), .2); tk = c('কখন')
     img(sc, lambda t: ('clock', (int(t) * 6) % 360, 200, 110, 'neon', int(t * 1) * 6 % 360), 360, 290, z=.5, s=1.5, t0=-99, kind='fade')
     chr_(sc, 'girl', 360, 900, s=1.3, expr='neutral', ex=[(c('চুপ'), 'sad'), (tk - .4, 'neutral')], talk=[(tk - .15, sc.dur - .1)], z=1.1)
-    txt(sc, 'কখন?', 360, 250, size=130, fill=CORAL, stroke=9, t0=tk, d=.22, fixed=True)
-    sc.cam((0, 360, 470, 1.0, 0), (tk - .1, 360, 590, 1.6, 0), (tk + .1, 360, 560, 1.8, -3, eo), (sc.dur, 360, 560, 1.85, 0))
+    txt(sc, 'কখন?', 360, 150, size=120, fill=CORAL, stroke=9, t0=tk, d=.22, fixed=True)
+    sc.cam((0, 360, 470, 1.0, 0), (tk - .1, 360, 540, 1.3, 0), (tk + .1, 360, 530, 1.45, -2, eo), (sc.dur, 360, 530, 1.5, 0))
     sc.shake(tk, .3, 9); sc.hit(tk, 'tick')
 def s_fork(sc):
     c = sc.cue; sc.bg((250, 226, 170), (230, 190, 130), .2)
@@ -181,7 +181,8 @@ def s_fork(sc):
 def s_simple(sc):
     c = sc.cue; sc.bg((226, 236, 246), (190, 210, 235), .2); tm = c('মনে')
     sc.add(('skyline', (190, 204, 230), 900, 300, 2), 400, 760, z=.4)
-    img(sc, ('bubble', 'কথাটা খুব সাধারণ।', 28, 'bl'), 360, 420, t0=.2, z=1, anim=comb(bob(3, 2), leave(c('কিন্তু') - .1, .3, 'up', 60)))
+    img(sc, ('bubble', 'কথাটা খুব সাধারণ।', 28, 'bl'), 330, 420, t0=.2, z=1, anim=comb(bob(3, 2), leave(c('কিন্তু') - .1, .3, 'up', 60)))
+    chr_(sc, 'girl', 240, 900, z=1.0, s=.85, expr='neutral', sil=(150, 160, 190), talk=[(.3, c('কিন্তু') - .3)], anim=comb(enter(.1, 'fade', .3), leave(c('কিন্তু') - .1, .3, 'fade')))
     chr_(sc, 'zahid', 360, 880, z=1.05, s=1.0, expr='neutral', ex=[(c('কিন্তু'), 'think')], lk=[(tm, 0)], anim=enter(c('জাহিদের') - .3, 'up', .4, 140))
     img(sc, ('burst', (255, 238, 120), 120, 12), 360, 330, t0=tm, kind='fade', z=1, s=2.0, a=.6, anim=lambda t: dict(rot=t * 40))
     img(sc, ('bulb',), 360, 340, t0=tm, kind='pop', z=1.1, s=1.5, anim=bob(5, 1.2))

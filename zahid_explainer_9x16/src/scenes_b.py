@@ -12,8 +12,8 @@ def s_ten(sc):
 def s_chart(sc):
     c = sc.cue; sc.bg((250, 238, 214), (232, 214, 176), .2); tH = c('পঞ্চাশ'); tL = c('চল্লিশ')
     sc.add(lambda t: ('bars', int(ramp(t, .35, c('বেশি') + .1) * 40) / 40.0, 1 if tH - .5 <= t < tL - .6 else (2 if t >= tL - .6 else 0)), 360, 470, z=1, t0=0, anim=enter(0, 'up', .5, 120))
-    count_txt(sc, 360, 190, tH - 1.0, tH + .3, 0, 50, size=150, fill=CORAL, stroke=9, fixed=True, t_end=tL - .75)
-    count_txt(sc, 360, 190, tL - .55, tL + .3, 0, 40, size=150, fill=TEAL, stroke=9, fixed=True)
+    count_txt(sc, 360, 190, tH - .9, tH + .05, 0, 50, size=150, fill=CORAL, stroke=9, fixed=True, t_end=tL - .75)
+    count_txt(sc, 360, 190, tL - .7, tL + .05, 50, 40, size=150, fill=TEAL, stroke=9, fixed=True)
     sc.cam((0, 360, 470, .95, 0), (c('বেশি') - .2, 360, 480, 1.0, 0), (tH - .2, 237, 360, 1.9, -2), (tH + .1, 237, 350, 2.2, 0, eo), (tL - .9, 250, 380, 2.0, 0), (tL - .45, 453, 430, 2.0, 2), (sc.dur, 453, 430, 2.25, 0))
     sc.shake(tH + .25, .5, 16); sc.flash(tH + .25, .35, (255, 140, 110), .55); sc.hit(tH + .25, 'big')
     sc.hit(tL + .3, 'hit'); sc.flash(tL + .3, .25, (130, 230, 230), .4)
@@ -29,8 +29,8 @@ def s_strike(sc):
 def s_write(sc):
     c = sc.cue; sc.bg((255, 214, 170), (255, 236, 200), .2); t0 = c('সাধারণ') - .1; t1 = c('মিনিটে', end=True)
     sc.add(('skyline', (236, 190, 150), 900, 300, 11), 400, 700, z=.5)
-    sc.add(lambda t: ('poster', 'সাধারণ মডেলের\nস্ক্রিন বদলান\n৫০ মিনিটে।', 48, 0, int(ramp(t, t0, t1) * 24) / 24.0, INK, (255, 252, 240), 0), 360, 380, anim=enter(.05, 'down', .4, 90))
-    img(sc, ('broom',), 360, 400, t0=t0 - .1, z=1.15, s=.8, rot=70, anim=lambda t: dict(dx=lerp(-200, 200, ramp(t, t0, t1)), a=1 - ramp(t, t1 + .1, t1 + .3), dy=8 * math.sin(t * 14)))
+    sc.add(lambda t: ('poster', 'সাধারণ মডেলের\nস্ক্রিন বদলান\n৫০ মিনিটে।', 48, 0, int(ramp(t, t0, t1 - .35) * 24) / 24.0, INK, (255, 252, 240), 0), 360, 380, anim=enter(.05, 'down', .4, 90))
+    img(sc, ('broom',), 360, 400, t0=t0 - .1, z=1.15, s=.8, rot=70, anim=lambda t: dict(dx=lerp(-200, 200, ramp(t, t0, t1 - .35)), a=1 - ramp(t, t1 - .3, t1 - .1), dy=8 * math.sin(t * 14)))
     stamp(sc, '৫০', 360, 740, c('৫০') - .3, size=170, fill=RED, rot=-6, z=1.2)
     chr_(sc, 'zahid', 570, 900, s=.65, expr='happy', pose='talk', z=1.1)
     sc.cam((0, 200, 420, 1.1, 0), (t1 - .2, 480, 430, 1.1, 0), (t1 + .2, 360, 520, 1.3, -2), (sc.dur, 360, 540, 1.38, 0))
@@ -174,8 +174,8 @@ def s_takeaway(sc):
     sc.add(('poster', 'সেরা\nসার্ভিস', 56, 0, 1, INK, (255, 250, 232), 260), 200, 400, z=1, s_=.9, t0=tn, anim=enter(tn + .1, 'left', .4, 500))
     sc.add(('poster', '৫০\nমিনিটে', 56, 0, 1, INK, (255, 250, 232), 260), 520, 400, z=1, s_=.9, t0=tn, anim=enter(tn + .25, 'right', .4, 500))
     img(sc, lambda t: ('stopw', int(lerp(0, 300, ramp(t, tw + .2, tw + 2.0)) // 6) * 6, 90, 0), 360, 650, t0=tw, kind='up', dist=300, z=1.1, s=1.0)
-    img(sc, ('cross', RED, 130), 200, 400, t0=tw + 1.0, z=1.2, s=1.2)
-    img(sc, ('check', GREEN, 140), 520, 400, t0=c('দেখতে') - .1, z=1.2, s=1.2)
+    img(sc, ('cross', RED, 130), 270, 345, t0=tw + 1.0, z=1.2, s=.9)
+    img(sc, ('check', GREEN, 140), 590, 345, t0=c('দেখতে') - .1, z=1.2, s=.9)
     sc.cam((0, 360, 440, 1.2, -2), (tn, 360, 440, 1.2, 0), (tn + .5, 360, 500, .95, 0), (tw + 1.0, 250, 440, 1.25, 0), (c('দেখতে') - .2, 520, 440, 1.35, 1), (sc.dur, 440, 500, 1.1, 0))
     sc.hit(tw + 1.0, 'hit'); sc.hit(c('দেখতে') - .1, 'ding')
 def s_stillwall(sc):

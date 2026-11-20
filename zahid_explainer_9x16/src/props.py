@@ -100,8 +100,8 @@ def b_stopw(a=0, r=70, red=0):
     return p.done()
 def b_sign(l='অপেক্ষা', r='অন্য দোকান'):
     p = Pen(560, 440); p.rr((268, 40, 292, 430), (150, 110, 70), 4)
-    p.poly([(20, 70), (240, 70), (270, 100), (240, 130), (20, 130)], GREEN, 3); p.poly([(540, 200), (320, 200), (290, 230), (320, 260), (540, 260)], CORAL, 3)
-    paste_text(p, text_img(l, 34, WHITE, 3), 130, 100); paste_text(p, text_img(r, 34, WHITE, 3), 420, 230)
+    p.poly([(270, 70), (50, 70), (20, 100), (50, 130), (270, 130)], GREEN, 3); p.poly([(290, 200), (510, 200), (540, 230), (510, 260), (290, 260)], CORAL, 3)
+    paste_text(p, text_img(l, 34, WHITE, 3), 160, 100); paste_text(p, text_img(r, 34, WHITE, 3), 410, 230)
     p.ell((250, 22, 310, 52), (150, 110, 70), 3); return p.done()
 def b_sun(r=90): p = Pen(2 * r + 8, 2 * r + 8); p.ell((4, 4, 4 + 2 * r, 4 + 2 * r), (255, 214, 90), 0); return p.done()
 def b_rays(r=260, n=14):

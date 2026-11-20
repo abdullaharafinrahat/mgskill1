@@ -104,7 +104,7 @@ if __name__ == '__main__':
         from multiprocessing import Pool
         os.makedirs('/tmp/work/chunks', exist_ok=True)
         n = (NF + CHUNK - 1) // CHUNK; t0 = time.time(); done = 0
-        with Pool(4, initializer=init) as pool:
+        with Pool(2, initializer=init) as pool:
             for ci in pool.imap_unordered(do_chunk, range(n)):
                 done += 1; print(f'chunk {ci} done {done}/{n} elapsed {time.time()-t0:.0f}s', flush=True)
         print('ALLDONE', flush=True)
